@@ -2,6 +2,7 @@
 #include <time.h>
 #include <string.h>
 #include <stdlib.h>
+#include "quicksort.h"
 //time
 void date(char time2[])
 {
@@ -65,33 +66,6 @@ void clockTime(char time[],int *hour, int *min, int *sec)
       }
    }
 }
-//structs
-struct Movie
-{
-    char movieName[200];
-    char summary[10000];
-    char movieJenre[100];
-};
-struct Starting
-{
-    int startHour;
-    int startMin;
-    int startSec;
-};
-struct Ending
-{
-    int endHour;
-    int endMin;
-    int endSec;
-};
-struct Sons
-{
-    char todayDate[100];
-    struct Movie Film;
-    struct Starting StartTime;
-    struct Ending EndTime;
-    int emptySeats;
-};
 int main()
 {
     char time[50];
