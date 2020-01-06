@@ -176,8 +176,21 @@ int main()
     date(time);
     todayDate(time,today);
     clockTime(time,&hour,&min,&sec);
+    int salon;
+    printf("salone khod ra entekhab konid(salone 1, salone 2, salone 3):\t");
+    scanf("%d",&salon);
+    while(salon > 3 || salon < 1)
+    {
+        printf("addad eshtebah ast dobare talash konid:\t");
+        scanf("%d",&salon);
+    }
     FILE *sons;
-    sons = fopen("sonss.txt","r+");
+    if(salon == 1)
+        sons = fopen("sonss.txt","r+");
+    else if(salon == 2)
+        sons = fopen("sonss2.txt","r+");
+    else if(salon == 3)
+        sons = fopen("sonss3.txt","r+");    
     struct Sons TodaySons;
     struct Sons Allsons[10];
     int ticketNum = 0;
@@ -248,17 +261,17 @@ int main()
                 printf("sonsha tadakhol dashtand dobare talash konid:\n");
                 printf("be jaye space '-' begozarid!!!\n");
                 strcpy(TodaySons.todayDate,today);
-                printf("adding sons\nmovie name: \t");
+                printf("adding sons\nmovie name:");
                 scanf("%s",TodaySons.Film.movieName);
-                printf("movie summary:\t");
+                printf("movie summary:");
                 scanf("%s",TodaySons.Film.summary);
-                printf("movie jenre:\t");
+                printf("movie jenre:");
                 scanf("%s",TodaySons.Film.movieJenre);
-                printf("movie start time(hour:min:sec):\t");
+                printf("movie start time(hour:min:sec):");
                 scanf("%d:%d:%d",&TodaySons.StartTime.startHour,&TodaySons.StartTime.startMin,&TodaySons.StartTime.startSec);
-                printf("movie end time(hour:min:sec):\t");
+                printf("movie end time(hour:min:sec):");
                 scanf("%d:%d:%d",&TodaySons.EndTime.endHour,&TodaySons.EndTime.endMin,&TodaySons.EndTime.endSec);
-                printf("empty seats number:\t");
+                printf("empty seats number:");
                 scanf("%d",&TodaySons.emptySeats); 
                 trueOrFalse = sonsCheck(TodaySons,Allsons);
             }
@@ -294,7 +307,12 @@ int main()
         }
     }
     fclose(sons);
-    sons = fopen("sonss.txt","r+");
+    if(salon == 1)
+        sons = fopen("sonss.txt","r+");
+    else if(salon == 2)
+        sons = fopen("sonss2.txt","r+");
+    else if(salon == 3)
+        sons = fopen("sonss3.txt","r+");
     sonsCounter = 0;
     while(!feof(sons))
     {
@@ -302,9 +320,14 @@ int main()
         sonsCounter++;
     }
     fclose(sons);
-    if(sonsNum != 1)
+    if(sonsNum != 1 && Allsons[sonsNum].emptySeats >= ticketNum)
         Allsons[sonsNum].emptySeats -= ticketNum;
-    sons = fopen("sonss.txt","w");
+    if(salon == 1)
+        sons = fopen("sonss.txt","w");
+    else if(salon == 2)
+        sons = fopen("sonss2.txt","w");
+    else if(salon == 3)
+        sons = fopen("sonss3.txt","w");        
     quicksort(Allsons,0,9);   
     for(int i = 0;i < 10;i++)
     {
