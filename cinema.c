@@ -69,7 +69,6 @@ void clockTime(char time[],int *hour, int *min, int *sec)
 struct Movie
 {
     char movieName[200];
-    int movieTime;
     char summary[10000];
     char movieJenre[100];
 };
@@ -110,8 +109,8 @@ int main()
     while(!feof(sons))
     {
         printf("injaaaaaaaaaaa\n\n");
-        fscanf(sons,"%s %s %d %s %s %d:%d:%d %d:%d:%d %d\n",&Allsons[sonsCounter].todayDate,&Allsons[sonsCounter].Film.movieName,&Allsons[sonsCounter].Film.movieTime,&Allsons[sonsCounter].Film.summary,&Allsons[sonsCounter].Film.movieJenre,&Allsons[sonsCounter].StartTime.startHour,&Allsons[sonsCounter].StartTime.startMin,&Allsons[sonsCounter].StartTime.startSec,&Allsons[sonsCounter].EndTime.endHour,&Allsons[sonsCounter].EndTime.endMin,&Allsons[sonsCounter].EndTime.endSec,&Allsons[sonsCounter].emptySeats);
-        printf("%s %s %d %s %s %d:%d:%d %d:%d:%d %d\n",Allsons[sonsCounter].todayDate,Allsons[sonsCounter].Film.movieName,Allsons[sonsCounter].Film.movieTime,Allsons[sonsCounter].Film.summary,Allsons[sonsCounter].Film.movieJenre,Allsons[sonsCounter].StartTime.startHour,Allsons[sonsCounter].StartTime.startMin,Allsons[sonsCounter].StartTime.startSec,Allsons[sonsCounter].EndTime.endHour,Allsons[sonsCounter].EndTime.endMin,Allsons[sonsCounter].EndTime.endSec,Allsons[sonsCounter].emptySeats);
+        fscanf(sons,"%s %s %s %s %d:%d:%d %d:%d:%d %d\n",&Allsons[sonsCounter].todayDate,&Allsons[sonsCounter].Film.movieName,&Allsons[sonsCounter].Film.summary,&Allsons[sonsCounter].Film.movieJenre,&Allsons[sonsCounter].StartTime.startHour,&Allsons[sonsCounter].StartTime.startMin,&Allsons[sonsCounter].StartTime.startSec,&Allsons[sonsCounter].EndTime.endHour,&Allsons[sonsCounter].EndTime.endMin,&Allsons[sonsCounter].EndTime.endSec,&Allsons[sonsCounter].emptySeats);
+        printf("%s %s %s %s %d:%d:%d %d:%d:%d %d\n",Allsons[sonsCounter].todayDate,Allsons[sonsCounter].Film.movieName,Allsons[sonsCounter].Film.summary,Allsons[sonsCounter].Film.movieJenre,Allsons[sonsCounter].StartTime.startHour,Allsons[sonsCounter].StartTime.startMin,Allsons[sonsCounter].StartTime.startSec,Allsons[sonsCounter].EndTime.endHour,Allsons[sonsCounter].EndTime.endMin,Allsons[sonsCounter].EndTime.endSec,Allsons[sonsCounter].emptySeats);
         sonsCounter++;
     }
     strcpy(TodaySons.todayDate,today);
@@ -128,8 +127,6 @@ int main()
         strcpy(TodaySons.todayDate,today);
         printf("adding sons\nmovie name:");
         scanf("%s",TodaySons.Film.movieName);
-        printf("zamane film: ");
-        scanf("%d",&TodaySons.Film.movieTime);
         printf("movie summary:\t");
         scanf("%s",TodaySons.Film.summary);
         printf("movie jenre:\t");
@@ -140,7 +137,7 @@ int main()
         scanf("%d:%d:%d",&TodaySons.EndTime.endHour,&TodaySons.EndTime.endMin,&TodaySons.EndTime.endSec);
         printf("empty seats number:\t");
         scanf("%d",&TodaySons.emptySeats);
-        fprintf(sons,"%s %s %d %s %s %d:%d:%d %d:%d:%d %d\n",TodaySons.todayDate,TodaySons.Film.movieName,TodaySons.Film.movieTime,TodaySons.Film.summary,TodaySons.Film.movieJenre,TodaySons.StartTime.startHour,TodaySons.StartTime.startMin,TodaySons.StartTime.startSec,TodaySons.EndTime.endHour,TodaySons.EndTime.endMin,TodaySons.EndTime.endSec,TodaySons.emptySeats);
+        fprintf(sons,"%s %s %s %s %d:%d:%d %d:%d:%d %d\n",TodaySons.todayDate,TodaySons.Film.movieName,TodaySons.Film.summary,TodaySons.Film.movieJenre,TodaySons.StartTime.startHour,TodaySons.StartTime.startMin,TodaySons.StartTime.startSec,TodaySons.EndTime.endHour,TodaySons.EndTime.endMin,TodaySons.EndTime.endSec,TodaySons.emptySeats);
         fclose(sons);
     }
 
