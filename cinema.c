@@ -290,7 +290,21 @@ int main()
             for(int i = 0;i<10;i++)
             {
                 if(Allsons[i].StartTime.startHour != 100)
-                printf("\n%d) %s %s %s %s %d:%d:%d %d:%d:%d %d\n\n",i,Allsons[i].todayDate,Allsons[i].Film.movieName,Allsons[i].Film.summary,Allsons[i].Film.movieJenre,Allsons[i].StartTime.startHour,Allsons[i].StartTime.startMin,Allsons[i].StartTime.startSec,Allsons[i].EndTime.endHour,Allsons[i].EndTime.endMin,Allsons[i].EndTime.endSec,Allsons[i].emptySeats);
+                {   
+                    if(Allsons[i].StartTime.startHour > hour)
+                        printf("\n%d) %s %s %s %s %d:%d:%d %d:%d:%d %d\n\n",i,Allsons[i].todayDate,Allsons[i].Film.movieName,Allsons[i].Film.summary,Allsons[i].Film.movieJenre,Allsons[i].StartTime.startHour,Allsons[i].StartTime.startMin,Allsons[i].StartTime.startSec,Allsons[i].EndTime.endHour,Allsons[i].EndTime.endMin,Allsons[i].EndTime.endSec,Allsons[i].emptySeats);
+                    else if(Allsons[i].StartTime.startHour == hour)
+                    {
+                        if(Allsons[i].StartTime.startMin > min)
+                            printf("\n%d) %s %s %s %s %d:%d:%d %d:%d:%d %d\n\n",i,Allsons[i].todayDate,Allsons[i].Film.movieName,Allsons[i].Film.summary,Allsons[i].Film.movieJenre,Allsons[i].StartTime.startHour,Allsons[i].StartTime.startMin,Allsons[i].StartTime.startSec,Allsons[i].EndTime.endHour,Allsons[i].EndTime.endMin,Allsons[i].EndTime.endSec,Allsons[i].emptySeats);
+                        else if(Allsons[i].StartTime.startMin == min)
+                        {
+                            if(Allsons[i].StartTime.startSec >= sec)
+                                printf("\n%d) %s %s %s %s %d:%d:%d %d:%d:%d %d\n\n",i,Allsons[i].todayDate,Allsons[i].Film.movieName,Allsons[i].Film.summary,Allsons[i].Film.movieJenre,Allsons[i].StartTime.startHour,Allsons[i].StartTime.startMin,Allsons[i].StartTime.startSec,Allsons[i].EndTime.endHour,Allsons[i].EndTime.endMin,Allsons[i].EndTime.endSec,Allsons[i].emptySeats);    
+                        }
+
+                    }
+                }
             }
             printf("Entekhabw sons:\t");
             scanf("%d",&sonsNum);
