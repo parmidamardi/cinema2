@@ -124,6 +124,7 @@ int main()
 
     if(state == 1)
     {
+        printf("be jaye space '-' begozarid!!!\n");
         strcpy(TodaySons.todayDate,today);
         printf("adding sons\nmovie name:");
         scanf("%s",TodaySons.Film.movieName);
