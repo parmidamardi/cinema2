@@ -90,9 +90,7 @@ struct Sons
     struct Starting StartTime;
     struct Ending EndTime;
     int emptySeats;
-    int seatsArray[6][6];
 };
-
 int main()
 {
     char time[200];
@@ -104,5 +102,17 @@ int main()
     //printf("%s\n%d:%d:%d\n",today,hour,min,sec);
     FILE *sons;
     sons = fopen("sonss.txt","r+");
-
+    struct Sons TodaySons;
+    strcpy(TodaySons.todayDate,today);
+    printf("adding sons\nmovie name:");
+    scanf("%s",TodaySons.Film.movieName);
+    printf("movie start time(hour:min:sec):\t");
+    scanf("%d:%d:%d",&TodaySons.StartTime.startHour,&TodaySons.StartTime.startMin,&TodaySons.StartTime.startSec);
+    printf("movie end time(hour:min:sec):\t");
+    scanf("%d:%d:%d",&TodaySons.EndTime.endHour,&TodaySons.EndTime.endMin,&TodaySons.EndTime.endSec);
+    printf("empty seats number:\t");
+    scanf("%d",&TodaySons.emptySeats);
+    fseek(sons,sizeof(TodaySons),SEEK_SET);
+    fwrite(&TodaySons,sizeof(TodaySons),1,sons);
+    fclose(sons);
 }
