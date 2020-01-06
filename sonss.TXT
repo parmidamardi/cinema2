@@ -1,3 +1,7 @@
-Mon-Jan-06  pretige salam comedy 2:2:3 4:5:5 20
-Mon-Jan-06  greenmile parmida action 2:2:2 5:5:5 20
-Mon-Jan-06   cd "c:\Users\LENOVO\Desktop\cinema\cinema2" 6618676:1974956418:12451840 0:12461328:745261296 8
+Mon-Jan-06  prestige goodmovie scific 10:0:0 12:0:0 20
+Mon-Jan-06  greenmile tomhanksacting dram 8:0:0 10:0:0 20
+Mon-Jan-06  tom&jerry mouse&cat cartoon 14:0:0 16:0:0 30
+Mon-Jan-06  gdgee gdgr drgrd 12:3:0 13:0:0 23
+Mon-Jan-06  dfg dfg dfg 18:0:0 20:0:0 342
+Mon-Jan-06  dfd fdgdf dgdfg 16:0:3 18:0:0 345
+Mon-Jan-06  dfgd dfgdf dfgdfg 4:0:0 5:7:8 43
