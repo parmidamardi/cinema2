@@ -70,5 +70,8 @@ int main()
     date(time);
     todayDate(time,today);
     clockTime(time,&hour,&min,&sec);
-    printf("%s\n%d:%d:%d\n",today,hour,min,sec);
+    //printf("%s\n%d:%d:%d\n",today,hour,min,sec);
+    FILE *sons;
+    sons = fopen("sonss.txt","r+");
+
 }
