@@ -224,7 +224,7 @@ int main()
         for(int i = 0;i<10;i++)
         {
             if(Allsons[i].StartTime.startHour != 100)
-            printf("\n%d) %s\nmovie name: %s\nmovie summary: %s\nmovie jenre: %s\nstart timr: %d:%d:%d\nend time: %d:%d:%d\nempty seats:%d\n\n",i,Allsons[i].todayDate,Allsons[i].Film.movieName,Allsons[i].Film.summary,Allsons[i].Film.movieJenre,Allsons[i].StartTime.startHour,Allsons[i].StartTime.startMin,Allsons[i].StartTime.startSec,Allsons[i].EndTime.endHour,Allsons[i].EndTime.endMin,Allsons[i].EndTime.endSec,Allsons[i].emptySeats);
+            printf("\n%d) %s\nmovie name: %s\nmovie summary: %s\nmovie jenre: %s\nstart time: %d:%d:%d\nend time: %d:%d:%d\nempty seats:%d\n\n",i,Allsons[i].todayDate,Allsons[i].Film.movieName,Allsons[i].Film.summary,Allsons[i].Film.movieJenre,Allsons[i].StartTime.startHour,Allsons[i].StartTime.startMin,Allsons[i].StartTime.startSec,Allsons[i].EndTime.endHour,Allsons[i].EndTime.endMin,Allsons[i].EndTime.endSec,Allsons[i].emptySeats);
         }
         if(sonsCounter < 10)
         {
