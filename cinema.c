@@ -206,7 +206,7 @@ int main()
     }
     while(!feof(sons))
     {
-        fscanf(sons,"%s %s %s %s %d:%d:%d %d:%d:%d %d\n",&Allsons[sonsCounter].todayDate,&Allsons[sonsCounter].Film.movieName,&Allsons[sonsCounter].Film.summary,&Allsons[sonsCounter].Film.movieJenre,&Allsons[sonsCounter].StartTime.startHour,&Allsons[sonsCounter].StartTime.startMin,&Allsons[sonsCounter].StartTime.startSec,&Allsons[sonsCounter].EndTime.endHour,&Allsons[sonsCounter].EndTime.endMin,&Allsons[sonsCounter].EndTime.endSec,&Allsons[sonsCounter].emptySeats);
+        fscanf(sons,"%s\n%s\n%s\n%s\n%d:%d:%d\n%d:%d:%d\n%d\n",&Allsons[sonsCounter].todayDate,&Allsons[sonsCounter].Film.movieName,&Allsons[sonsCounter].Film.summary,&Allsons[sonsCounter].Film.movieJenre,&Allsons[sonsCounter].StartTime.startHour,&Allsons[sonsCounter].StartTime.startMin,&Allsons[sonsCounter].StartTime.startSec,&Allsons[sonsCounter].EndTime.endHour,&Allsons[sonsCounter].EndTime.endMin,&Allsons[sonsCounter].EndTime.endSec,&Allsons[sonsCounter].emptySeats);
         sonsCounter++;
     }
     quicksort(Allsons,0,9);
@@ -224,7 +224,7 @@ int main()
         for(int i = 0;i<10;i++)
         {
             if(Allsons[i].StartTime.startHour != 100)
-            printf("\n%d) %s %s %s %s %d:%d:%d %d:%d:%d %d\n\n",i,Allsons[i].todayDate,Allsons[i].Film.movieName,Allsons[i].Film.summary,Allsons[i].Film.movieJenre,Allsons[i].StartTime.startHour,Allsons[i].StartTime.startMin,Allsons[i].StartTime.startSec,Allsons[i].EndTime.endHour,Allsons[i].EndTime.endMin,Allsons[i].EndTime.endSec,Allsons[i].emptySeats);
+            printf("\n%d) %s\nmovie name: %s\nmovie summary: %s\nmovie jenre: %s\nstart timr: %d:%d:%d\nend time: %d:%d:%d\nempty seats:%d\n\n",i,Allsons[i].todayDate,Allsons[i].Film.movieName,Allsons[i].Film.summary,Allsons[i].Film.movieJenre,Allsons[i].StartTime.startHour,Allsons[i].StartTime.startMin,Allsons[i].StartTime.startSec,Allsons[i].EndTime.endHour,Allsons[i].EndTime.endMin,Allsons[i].EndTime.endSec,Allsons[i].emptySeats);
         }
         if(sonsCounter < 10)
         {
@@ -275,7 +275,7 @@ int main()
                 scanf("%d",&TodaySons.emptySeats); 
                 trueOrFalse = sonsCheck(TodaySons,Allsons);
             }
-            fprintf(sons,"%s %s %s %s %d:%d:%d %d:%d:%d %d\n",TodaySons.todayDate,TodaySons.Film.movieName,TodaySons.Film.summary,TodaySons.Film.movieJenre,TodaySons.StartTime.startHour,TodaySons.StartTime.startMin,TodaySons.StartTime.startSec,TodaySons.EndTime.endHour,TodaySons.EndTime.endMin,TodaySons.EndTime.endSec,TodaySons.emptySeats);
+            fprintf(sons,"%s\n%s\n%s\n%s\n%d:%d:%d\n%d:%d:%d\n%d\n",TodaySons.todayDate,TodaySons.Film.movieName,TodaySons.Film.summary,TodaySons.Film.movieJenre,TodaySons.StartTime.startHour,TodaySons.StartTime.startMin,TodaySons.StartTime.startSec,TodaySons.EndTime.endHour,TodaySons.EndTime.endMin,TodaySons.EndTime.endSec,TodaySons.emptySeats);
         }
         else
         {
@@ -285,6 +285,7 @@ int main()
     }
     else
     {
+        int flag = 1;
         if(sonsCounter > 1)
         {
             for(int i = 0;i<10;i++)
@@ -292,28 +293,45 @@ int main()
                 if(Allsons[i].StartTime.startHour != 100)
                 {   
                     if(Allsons[i].StartTime.startHour > hour)
+                    {
                         printf("\n%d) %s %s %s %s %d:%d:%d %d:%d:%d %d\n\n",i,Allsons[i].todayDate,Allsons[i].Film.movieName,Allsons[i].Film.summary,Allsons[i].Film.movieJenre,Allsons[i].StartTime.startHour,Allsons[i].StartTime.startMin,Allsons[i].StartTime.startSec,Allsons[i].EndTime.endHour,Allsons[i].EndTime.endMin,Allsons[i].EndTime.endSec,Allsons[i].emptySeats);
+                        flag = 0;
+                    }
                     else if(Allsons[i].StartTime.startHour == hour)
                     {
                         if(Allsons[i].StartTime.startMin > min)
+                        {
                             printf("\n%d) %s %s %s %s %d:%d:%d %d:%d:%d %d\n\n",i,Allsons[i].todayDate,Allsons[i].Film.movieName,Allsons[i].Film.summary,Allsons[i].Film.movieJenre,Allsons[i].StartTime.startHour,Allsons[i].StartTime.startMin,Allsons[i].StartTime.startSec,Allsons[i].EndTime.endHour,Allsons[i].EndTime.endMin,Allsons[i].EndTime.endSec,Allsons[i].emptySeats);
+                            flag = 0;
+                        }
                         else if(Allsons[i].StartTime.startMin == min)
                         {
                             if(Allsons[i].StartTime.startSec >= sec)
-                                printf("\n%d) %s %s %s %s %d:%d:%d %d:%d:%d %d\n\n",i,Allsons[i].todayDate,Allsons[i].Film.movieName,Allsons[i].Film.summary,Allsons[i].Film.movieJenre,Allsons[i].StartTime.startHour,Allsons[i].StartTime.startMin,Allsons[i].StartTime.startSec,Allsons[i].EndTime.endHour,Allsons[i].EndTime.endMin,Allsons[i].EndTime.endSec,Allsons[i].emptySeats);    
+                            {
+                                printf("\n%d) %s %s %s %s %d:%d:%d %d:%d:%d %d\n\n",i,Allsons[i].todayDate,Allsons[i].Film.movieName,Allsons[i].Film.summary,Allsons[i].Film.movieJenre,Allsons[i].StartTime.startHour,Allsons[i].StartTime.startMin,Allsons[i].StartTime.startSec,Allsons[i].EndTime.endHour,Allsons[i].EndTime.endMin,Allsons[i].EndTime.endSec,Allsons[i].emptySeats);
+                                flag = 0;
+                            }
                         }
 
                     }
                 }
             }
-            printf("Entekhabw sons:\t");
-            scanf("%d",&sonsNum);
-            printf("Tedade ticket:\t");
-            scanf("%d",&ticketNum);
-            if(ticketNum > Allsons[sonsNum].emptySeats)
+            if(flag == 0)
             {
-                printf("salon por ast");
+                printf("Entekhabw sons:\t");
+                scanf("%d",&sonsNum);
+                printf("Tedade ticket:\t");
+                scanf("%d",&ticketNum);
+                if(ticketNum > Allsons[sonsNum].emptySeats)
+                {
+                    printf("salon por ast\n");
+                }
             }
+            else
+            {
+                printf("sans mojood nist\n");
+            }
+            
         }
         else
         {
@@ -330,7 +348,7 @@ int main()
     sonsCounter = 0;
     while(!feof(sons))
     {
-        fscanf(sons,"%s %s %s %s %d:%d:%d %d:%d:%d %d\n",&Allsons[sonsCounter].todayDate,&Allsons[sonsCounter].Film.movieName,&Allsons[sonsCounter].Film.summary,&Allsons[sonsCounter].Film.movieJenre,&Allsons[sonsCounter].StartTime.startHour,&Allsons[sonsCounter].StartTime.startMin,&Allsons[sonsCounter].StartTime.startSec,&Allsons[sonsCounter].EndTime.endHour,&Allsons[sonsCounter].EndTime.endMin,&Allsons[sonsCounter].EndTime.endSec,&Allsons[sonsCounter].emptySeats);
+        fscanf(sons,"%s\n%s\n%s\n%s\n%d:%d:%d\n%d:%d:%d\n%d\n",&Allsons[sonsCounter].todayDate,&Allsons[sonsCounter].Film.movieName,&Allsons[sonsCounter].Film.summary,&Allsons[sonsCounter].Film.movieJenre,&Allsons[sonsCounter].StartTime.startHour,&Allsons[sonsCounter].StartTime.startMin,&Allsons[sonsCounter].StartTime.startSec,&Allsons[sonsCounter].EndTime.endHour,&Allsons[sonsCounter].EndTime.endMin,&Allsons[sonsCounter].EndTime.endSec,&Allsons[sonsCounter].emptySeats);
         sonsCounter++;
     }
     fclose(sons);
@@ -346,7 +364,7 @@ int main()
     for(int i = 0;i < 10;i++)
     {
         if(Allsons[i].StartTime.startHour != 100)
-        fprintf(sons,"%s %s %s %s %d:%d:%d %d:%d:%d %d\n",Allsons[i].todayDate,Allsons[i].Film.movieName,Allsons[i].Film.summary,Allsons[i].Film.movieJenre,Allsons[i].StartTime.startHour,Allsons[i].StartTime.startMin,Allsons[i].StartTime.startSec,Allsons[i].EndTime.endHour,Allsons[i].EndTime.endMin,Allsons[i].EndTime.endSec,Allsons[i].emptySeats);            
+        fprintf(sons,"%s\n%s\n%s\n%s\n%d:%d:%d\n%d:%d:%d\n%d\n",Allsons[i].todayDate,Allsons[i].Film.movieName,Allsons[i].Film.summary,Allsons[i].Film.movieJenre,Allsons[i].StartTime.startHour,Allsons[i].StartTime.startMin,Allsons[i].StartTime.startSec,Allsons[i].EndTime.endHour,Allsons[i].EndTime.endMin,Allsons[i].EndTime.endSec,Allsons[i].emptySeats);            
     }
     fclose(sons);
 }

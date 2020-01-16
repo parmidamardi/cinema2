@@ -1,3 +1,21 @@
-Tue-Jan-07 ShutterIsland Teddy-Daniels-and-Chuck-Aule,two-US-marshals,are-sent-to-an-asylum-on-a-remote-island-in-order-to-investigate-the-disappearance-of-a-patient,where-Teddy-uncovers-a-shocking-truth-about-the-place. neo-noir-psychological-thriller 10:0:0 13:0:0 100
-Tue-Jan-07 ShutterIsland Teddy-Daniels-and-Chuck-Aule,two-US-marshals,are-sent-to-an-asylum-on-a-remote-island-in-order-to-investigate-the-disappearance-of-a-patient,where-Teddy-uncovers-a-shocking-truth-about-the-place. neo-noir-psychological-thriller 13:30:0 16:30:0 100
-Tue-Jan-07 ShutterIsland Teddy-Daniels-and-Chuck-Aule,two-US-marshals,are-sent-to-an-asylum-on-a-remote-island-in-order-to-investigate-the-disappearance-of-a-patient,where-Teddy-uncovers-a-shocking-truth-about-the-place. neo-noir-psychological-thriller 16:30:0 19:30:0 100
+Thu-Jan-16
+ShutterIsland
+Teddy-Daniels-and-Chuck-Aule,two-US-marshals,are-sent-to-an-asylum-on-a-remote-island-in-order-to-investigate-the-disappearance-of-a-patient,where-Teddy-uncovers-a-shocking-truth-about-the-place.
+neo-noir-psychological-thriller
+10:0:0
+13:0:0
+100
+Thu-Jan-16
+ShutterIsland
+Teddy-Daniels-and-Chuck-Aule,two-US-marshals,are-sent-to-an-asylum-on-a-remote-island-in-order-to-investigate-the-disappearance-of-a-patient,where-Teddy-uncovers-a-shocking-truth-about-the-place.
+neo-noir-psychological-thriller
+13:30:0
+16:30:0
+100
+Thu-Jan-16
+ShutterIsland
+Teddy-Daniels-and-Chuck-Aule,two-US-marshals,are-sent-to-an-asylum-on-a-remote-island-in-order-to-investigate-the-disappearance-of-a-patient,where-Teddy-uncovers-a-shocking-truth-about-the-place.
+neo-noir-psychological-thriller
+16:30:0
+19:30:0
+100
